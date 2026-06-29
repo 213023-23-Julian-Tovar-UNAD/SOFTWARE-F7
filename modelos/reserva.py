@@ -1,3 +1,6 @@
+from excepciones.excepciones import DuracionInvalidaError, ReservaError
+
+
 class Reserva:
     """
     Clase que representa una reserva realizada por un cliente.
@@ -5,7 +8,9 @@ class Reserva:
 
     def __init__(self, cliente, servicio, duracion):
         if duracion <= 0:
-            raise ValueError("La duración debe ser mayor que cero.")
+            raise DuracionInvalidaError(
+                "La duración debe ser mayor que cero."
+            )
 
         self.cliente = cliente
         self.servicio = servicio
@@ -20,7 +25,9 @@ class Reserva:
 
     def procesar(self):
         if self.estado == "Cancelada":
-            raise Exception("No se puede procesar una reserva cancelada.")
+            raise ReservaError(
+                "No se puede procesar una reserva cancelada."
+            )
 
         costo = self.servicio.calcular_costo(self.duracion)
         self.estado = "Procesada"
