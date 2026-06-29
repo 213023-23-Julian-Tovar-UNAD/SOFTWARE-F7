@@ -4,6 +4,8 @@ from modelos.alquiler_equipo import AlquilerEquipo
 from modelos.asesoria import Asesoria
 from modelos.reserva import Reserva
 
+from excepciones.excepciones import ClienteInvalidoError
+
 from utilidades.logger import registrar_evento, registrar_error
 
 
@@ -46,7 +48,7 @@ def main():
                     cliente = Cliente(nombre, documento, correo)
                     break
 
-                except ValueError as e:
+                except ClienteInvalidoError as e:
                     print("Error:", e)
                     registrar_error(str(e))
                     print("Ingrese nuevamente el correo.\n")
@@ -83,6 +85,7 @@ def main():
                         break
                     except ValueError:
                         print("Ingrese un precio válido.")
+                        registrar_error("Precio inválido.")
 
                 while True:
                     try:
@@ -90,6 +93,7 @@ def main():
                         break
                     except ValueError:
                         print("Ingrese una capacidad válida.")
+                        registrar_error("Capacidad inválida.")
 
                 servicio = ReservaSala(nombre_servicio, precio, capacidad)
 
@@ -103,6 +107,7 @@ def main():
                         break
                     except ValueError:
                         print("Ingrese un precio válido.")
+                        registrar_error("Precio inválido.")
 
                 tipo = input("Tipo de equipo: ")
 
@@ -118,6 +123,7 @@ def main():
                         break
                     except ValueError:
                         print("Ingrese un precio válido.")
+                        registrar_error("Precio inválido.")
 
                 especialidad = input("Especialidad: ")
 
@@ -140,6 +146,7 @@ def main():
 
                     if duracion <= 0:
                         print("La duración debe ser mayor que cero.")
+                        registrar_error("Duración inválida.")
                         continue
 
                     break

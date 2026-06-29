@@ -13,3 +13,4 @@ class ReservaError(Exception):
 class DuracionInvalidaError(Exception):
     """Sale cuando la duración de una reserva no es válida."""
     pass
+

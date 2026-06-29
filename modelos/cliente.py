@@ -1,4 +1,5 @@
 from modelos.persona import Persona
+from excepciones.excepciones import ClienteInvalidoError
 
 
 class Cliente(Persona):
