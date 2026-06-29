@@ -1,0 +1,42 @@
+2026-06-29 12:36:43,488 - INFO - Cliente registrado correctamente.
+2026-06-29 12:36:43,488 - INFO - Cliente registrado correctamente.
+2026-06-29 12:36:43,489 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:36:43,489 - INFO - Servicios creados correctamente.
+2026-06-29 12:36:43,490 - ERROR - La duraci�n debe ser mayor que cero.
+2026-06-29 12:36:43,491 - ERROR - No se puede procesar una reserva cancelada.
+2026-06-29 12:44:49,404 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:50:46,154 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:50:57,458 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:53:55,932 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:54:05,947 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 12:54:22,917 - INFO - Cliente registrado correctamente.
+2026-06-29 12:54:39,816 - INFO - Servicio registrado correctamente.
+2026-06-29 16:01:15,776 - INFO - Cliente registrado correctamente.
+2026-06-29 16:01:33,852 - INFO - Servicio registrado correctamente.
+2026-06-29 16:10:01,567 - INFO - Cliente registrado correctamente.
+2026-06-29 16:10:12,183 - ERROR - could not convert string to float: ''
+2026-06-29 16:10:34,812 - INFO - Cliente registrado correctamente.
+2026-06-29 16:10:53,627 - INFO - Servicio registrado correctamente.
+2026-06-29 16:11:14,168 - ERROR - Correo electr�nico inv�lido.
+2026-06-29 16:22:34,792 - ERROR - Documento inv�lido.
+2026-06-29 16:22:43,139 - INFO - Cliente registrado correctamente.
+2026-06-29 16:22:57,209 - INFO - Servicio registrado correctamente.
+2026-06-29 16:23:17,262 - INFO - Cliente registrado correctamente.
+2026-06-29 16:23:34,138 - INFO - Servicio registrado correctamente.
+2026-06-29 16:23:52,475 - INFO - Cliente registrado correctamente.
+2026-06-29 16:24:15,230 - INFO - Servicio registrado correctamente.
+2026-06-29 16:25:58,666 - ERROR - name 'ClienteInvalidoError' is not defined
+2026-06-29 16:26:26,667 - INFO - Cliente registrado correctamente.
+2026-06-29 16:26:36,756 - INFO - Servicio registrado correctamente.
+2026-06-29 16:27:00,474 - INFO - Cliente registrado correctamente.
+2026-06-29 16:27:02,913 - ERROR - Opci�n de servicio inv�lida.
+2026-06-29 16:27:17,064 - INFO - Servicio registrado correctamente.
+2026-06-29 16:27:31,540 - ERROR - Documento inv�lido.
+2026-06-29 16:27:40,798 - ERROR - name 'ClienteInvalidoError' is not defined
+2026-06-29 16:28:03,968 - INFO - Cliente registrado correctamente.
+2026-06-29 16:28:27,411 - INFO - Servicio registrado correctamente.
+2026-06-29 16:28:43,761 - ERROR - Documento inv�lido.
+2026-06-29 16:28:52,622 - INFO - Cliente registrado correctamente.
+2026-06-29 16:28:53,726 - ERROR - Opci�n de servicio inv�lida.
+2026-06-29 16:29:11,913 - INFO - Servicio registrado correctamente.
+2026-06-29 16:38:11,065 - ERROR - name 'ClienteInvalidoError' is not defined
