@@ -18,3 +18,25 @@
 2026-06-29 16:10:34,812 - INFO - Cliente registrado correctamente.
 2026-06-29 16:10:53,627 - INFO - Servicio registrado correctamente.
 2026-06-29 16:11:14,168 - ERROR - Correo electrónico inválido.
+2026-06-29 16:22:34,792 - ERROR - Documento inválido.
+2026-06-29 16:22:43,139 - INFO - Cliente registrado correctamente.
+2026-06-29 16:22:57,209 - INFO - Servicio registrado correctamente.
+2026-06-29 16:23:17,262 - INFO - Cliente registrado correctamente.
+2026-06-29 16:23:34,138 - INFO - Servicio registrado correctamente.
+2026-06-29 16:23:52,475 - INFO - Cliente registrado correctamente.
+2026-06-29 16:24:15,230 - INFO - Servicio registrado correctamente.
+2026-06-29 16:25:58,666 - ERROR - name 'ClienteInvalidoError' is not defined
+2026-06-29 16:26:26,667 - INFO - Cliente registrado correctamente.
+2026-06-29 16:26:36,756 - INFO - Servicio registrado correctamente.
+2026-06-29 16:27:00,474 - INFO - Cliente registrado correctamente.
+2026-06-29 16:27:02,913 - ERROR - Opción de servicio inválida.
+2026-06-29 16:27:17,064 - INFO - Servicio registrado correctamente.
+2026-06-29 16:27:31,540 - ERROR - Documento inválido.
+2026-06-29 16:27:40,798 - ERROR - name 'ClienteInvalidoError' is not defined
+2026-06-29 16:28:03,968 - INFO - Cliente registrado correctamente.
+2026-06-29 16:28:27,411 - INFO - Servicio registrado correctamente.
+2026-06-29 16:28:43,761 - ERROR - Documento inválido.
+2026-06-29 16:28:52,622 - INFO - Cliente registrado correctamente.
+2026-06-29 16:28:53,726 - ERROR - Opción de servicio inválida.
+2026-06-29 16:29:11,913 - INFO - Servicio registrado correctamente.
+2026-06-29 16:38:11,065 - ERROR - name 'ClienteInvalidoError' is not defined
