@@ -8,10 +8,8 @@ logging.basicConfig(
 
 
 def registrar_evento(mensaje):
-    """Registra un evento en el archivo de logs."""
     logging.info(mensaje)
 
 
 def registrar_error(mensaje):
-    """Registra un error en el archivo de logs."""
     logging.error(mensaje)

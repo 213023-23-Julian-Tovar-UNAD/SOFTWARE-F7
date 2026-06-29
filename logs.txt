@@ -11,3 +11,10 @@
 2026-06-29 12:54:05,947 - ERROR - Correo electrónico inválido.
 2026-06-29 12:54:22,917 - INFO - Cliente registrado correctamente.
 2026-06-29 12:54:39,816 - INFO - Servicio registrado correctamente.
+2026-06-29 16:01:15,776 - INFO - Cliente registrado correctamente.
+2026-06-29 16:01:33,852 - INFO - Servicio registrado correctamente.
+2026-06-29 16:10:01,567 - INFO - Cliente registrado correctamente.
+2026-06-29 16:10:12,183 - ERROR - could not convert string to float: ''
+2026-06-29 16:10:34,812 - INFO - Cliente registrado correctamente.
+2026-06-29 16:10:53,627 - INFO - Servicio registrado correctamente.
+2026-06-29 16:11:14,168 - ERROR - Correo electrónico inválido.

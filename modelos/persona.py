@@ -2,9 +2,7 @@ from abc import ABC
 
 
 class Persona(ABC):
-    """
-    Clase abstracta que representa una persona del sistema.
-    """
+   
 
     def __init__(self, nombre, documento):
         self._nombre = nombre

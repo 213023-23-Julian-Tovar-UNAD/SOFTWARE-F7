@@ -26,10 +26,8 @@ class Servicio(ABC):
 
     @abstractmethod
     def calcular_costo(self, cantidad):
-        """Cada servicio calculará su costo de forma diferente."""
         pass
 
     @abstractmethod
     def descripcion(self):
-        """Describe el servicio."""
         pass

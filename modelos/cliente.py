@@ -16,8 +16,14 @@ class Cliente(Persona):
 
     @correo.setter
     def correo(self, correo):
-        if "@" not in correo or "." not in correo:
-            raise ValueError("Correo electrónico inválido.")
+        try:
+            if "@" not in correo or "." not in correo:
+                raise ValueError("Formato de correo incorrecto.")
+        except ValueError as e:
+            raise ClienteInvalidoError(
+                "Correo electrónico inválido."
+            ) from e
+
         self._correo = correo
 
     def __str__(self):

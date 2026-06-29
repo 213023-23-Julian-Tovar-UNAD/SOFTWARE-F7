@@ -23,14 +23,21 @@ def main():
 
         try:
 
-            # -------------------------
-            # Registro del cliente
-            # -------------------------
             print("\n=== REGISTRO DEL CLIENTE ===")
 
             nombre = input("Nombre: ")
-            documento = input("Documento: ")
 
+            # Validar documento
+            while True:
+                documento = input("Documento: ")
+
+                if documento.isdigit():
+                    break
+
+                print("Error: El documento solo debe contener números.")
+                registrar_error("Documento inválido.")
+
+            # Validar correo
             while True:
 
                 correo = input("Correo: ")
@@ -50,25 +57,53 @@ def main():
             # -------------------------
             # Servicios
             # -------------------------
+
             print("\n=== TIPOS DE SERVICIO ===")
             print("1. Reserva de Sala")
             print("2. Alquiler de Equipo")
             print("3. Asesoría")
 
-            opcion = input("Seleccione una opción: ")
+            while True:
+
+                opcion = input("Seleccione una opción: ")
+
+                if opcion in ("1", "2", "3"):
+                    break
+
+                print("Error: Debe seleccionar una opción válida.")
+                registrar_error("Opción de servicio inválida.")
 
             if opcion == "1":
 
                 nombre_servicio = input("Nombre de la sala: ")
-                precio = float(input("Precio por hora: "))
-                capacidad = int(input("Capacidad: "))
+
+                while True:
+                    try:
+                        precio = float(input("Precio por hora: "))
+                        break
+                    except ValueError:
+                        print("Ingrese un precio válido.")
+
+                while True:
+                    try:
+                        capacidad = int(input("Capacidad: "))
+                        break
+                    except ValueError:
+                        print("Ingrese una capacidad válida.")
 
                 servicio = ReservaSala(nombre_servicio, precio, capacidad)
 
             elif opcion == "2":
 
                 nombre_servicio = input("Nombre del equipo: ")
-                precio = float(input("Precio por día: "))
+
+                while True:
+                    try:
+                        precio = float(input("Precio por día: "))
+                        break
+                    except ValueError:
+                        print("Ingrese un precio válido.")
+
                 tipo = input("Tipo de equipo: ")
 
                 servicio = AlquilerEquipo(nombre_servicio, precio, tipo)
@@ -76,13 +111,17 @@ def main():
             elif opcion == "3":
 
                 nombre_servicio = input("Nombre de la asesoría: ")
-                precio = float(input("Precio por hora: "))
+
+                while True:
+                    try:
+                        precio = float(input("Precio por hora: "))
+                        break
+                    except ValueError:
+                        print("Ingrese un precio válido.")
+
                 especialidad = input("Especialidad: ")
 
                 servicio = Asesoria(nombre_servicio, precio, especialidad)
-
-            else:
-                raise ValueError("Opción no válida.")
 
             servicios.append(servicio)
             registrar_evento("Servicio registrado correctamente.")
@@ -93,7 +132,21 @@ def main():
 
             print("\n=== RESERVA ===")
 
-            duracion = int(input("Duración: "))
+            while True:
+
+                try:
+
+                    duracion = int(input("Duración: "))
+
+                    if duracion <= 0:
+                        print("La duración debe ser mayor que cero.")
+                        continue
+
+                    break
+
+                except ValueError:
+                    print("Debe ingresar un número entero.")
+                    registrar_error("Duración inválida.")
 
             reserva = Reserva(cliente, servicio, duracion)
 
@@ -127,12 +180,7 @@ def main():
                 if continuar != "S":
                     break
 
-    # -------------------------
-    # Resumen
-    # -------------------------
-
     print("\n========== RESUMEN ==========")
-
     print(f"Clientes registrados: {len(clientes)}")
     print(f"Servicios registrados: {len(servicios)}")
     print(f"Reservas realizadas: {len(reservas)}")
