@@ -9,137 +9,135 @@ from utilidades.logger import registrar_evento, registrar_error
 
 def main():
 
-    print("===== SOFTWARE FJ =====\n")
+    print("========== SOFTWARE FJ ==========")
 
-    # Listas
     clientes = []
     servicios = []
     reservas = []
 
+    contador = 0
+
+    while contador < 10:
+
+        print(f"\n========== OPERACIÓN {contador + 1} ==========")
+
+        try:
+
+            # -------------------------
+            # Registro del cliente
+            # -------------------------
+            print("\n=== REGISTRO DEL CLIENTE ===")
+
+            nombre = input("Nombre: ")
+            documento = input("Documento: ")
+
+            while True:
+
+                correo = input("Correo: ")
+
+                try:
+                    cliente = Cliente(nombre, documento, correo)
+                    break
+
+                except ValueError as e:
+                    print("Error:", e)
+                    registrar_error(str(e))
+                    print("Ingrese nuevamente el correo.\n")
+
+            clientes.append(cliente)
+            registrar_evento("Cliente registrado correctamente.")
+
+            # -------------------------
+            # Servicios
+            # -------------------------
+            print("\n=== TIPOS DE SERVICIO ===")
+            print("1. Reserva de Sala")
+            print("2. Alquiler de Equipo")
+            print("3. Asesoría")
+
+            opcion = input("Seleccione una opción: ")
+
+            if opcion == "1":
+
+                nombre_servicio = input("Nombre de la sala: ")
+                precio = float(input("Precio por hora: "))
+                capacidad = int(input("Capacidad: "))
+
+                servicio = ReservaSala(nombre_servicio, precio, capacidad)
+
+            elif opcion == "2":
+
+                nombre_servicio = input("Nombre del equipo: ")
+                precio = float(input("Precio por día: "))
+                tipo = input("Tipo de equipo: ")
+
+                servicio = AlquilerEquipo(nombre_servicio, precio, tipo)
+
+            elif opcion == "3":
+
+                nombre_servicio = input("Nombre de la asesoría: ")
+                precio = float(input("Precio por hora: "))
+                especialidad = input("Especialidad: ")
+
+                servicio = Asesoria(nombre_servicio, precio, especialidad)
+
+            else:
+                raise ValueError("Opción no válida.")
+
+            servicios.append(servicio)
+            registrar_evento("Servicio registrado correctamente.")
+
+            # -------------------------
+            # Reserva
+            # -------------------------
+
+            print("\n=== RESERVA ===")
+
+            duracion = int(input("Duración: "))
+
+            reserva = Reserva(cliente, servicio, duracion)
+
+            reservas.append(reserva)
+
+            reserva.confirmar()
+
+            total = reserva.procesar()
+
+        except Exception as e:
+
+            print("\nError:", e)
+            registrar_error(str(e))
+
+        else:
+
+            print("\n===== RESERVA EXITOSA =====")
+            print(reserva)
+            print(f"Costo total: ${total}")
+
+        finally:
+
+            contador += 1
+
+            print(f"\nOperaciones realizadas: {contador}/10")
+
+            if contador < 10:
+
+                continuar = input("\n¿Desea realizar otra operación? (S/N): ").upper()
+
+                if continuar != "S":
+                    break
+
     # -------------------------
-    # Clientes
+    # Resumen
     # -------------------------
 
-    try:
-        cliente1 = Cliente("Julian Tovar", "12345", "julian@gmail.com")
-        clientes.append(cliente1)
-        registrar_evento("Cliente registrado correctamente.")
-    except Exception as e:
-        registrar_error(str(e))
+    print("\n========== RESUMEN ==========")
 
-    try:
-        cliente2 = Cliente("Maria Perez", "54321", "maria@gmail.com")
-        clientes.append(cliente2)
-        registrar_evento("Cliente registrado correctamente.")
-    except Exception as e:
-        registrar_error(str(e))
+    print(f"Clientes registrados: {len(clientes)}")
+    print(f"Servicios registrados: {len(servicios)}")
+    print(f"Reservas realizadas: {len(reservas)}")
 
-    # Cliente inválido
-    try:
-        cliente3 = Cliente("Pedro", "88888", "correo_invalido")
-        clientes.append(cliente3)
-    except Exception as e:
-        print("Error:", e)
-        registrar_error(str(e))
-
-    # -------------------------
-    # Servicios
-    # -------------------------
-
-    sala = ReservaSala("Sala Premium", 50000, 20)
-    equipo = AlquilerEquipo("Video Beam", 30000, "Proyector")
-    asesoria = Asesoria("Asesoría Python", 80000, "Programación")
-
-    servicios.extend([sala, equipo, asesoria])
-
-    registrar_evento("Servicios creados correctamente.")
-
-    # -------------------------
-    # Reservas
-    # -------------------------
-
-    try:
-        reserva1 = Reserva(cliente1, sala, 2)
-        reservas.append(reserva1)
-
-        reserva1.confirmar()
-
-        total = reserva1.procesar()
-
-        print(reserva1)
-        print("Costo:", total)
-
-    except Exception as e:
-        registrar_error(str(e))
-
-    try:
-        reserva2 = Reserva(cliente2, equipo, 5)
-
-        reservas.append(reserva2)
-
-        reserva2.confirmar()
-
-        total = reserva2.procesar()
-
-        print(reserva2)
-        print("Costo:", total)
-
-    except Exception as e:
-        registrar_error(str(e))
-
-    try:
-        reserva3 = Reserva(cliente1, asesoria, 3)
-
-        reservas.append(reserva3)
-
-        reserva3.confirmar()
-
-        total = reserva3.procesar()
-
-        print(reserva3)
-        print("Costo:", total)
-
-    except Exception as e:
-        registrar_error(str(e))
-
-    # -------------------------
-    # Reserva inválida
-    # -------------------------
-
-    try:
-        reserva4 = Reserva(cliente1, sala, -2)
-
-    except Exception as e:
-        print("Error:", e)
-        registrar_error(str(e))
-
-    # -------------------------
-    # Cancelación
-    # -------------------------
-
-    try:
-
-        reserva5 = Reserva(cliente2, sala, 1)
-
-        reserva5.cancelar()
-
-        reserva5.procesar()
-
-    except Exception as e:
-        print("Error:", e)
-        registrar_error(str(e))
-
-    # -------------------------
-    # Mostrar servicios
-    # -------------------------
-
-    print("\n===== SERVICIOS =====")
-
-    for servicio in servicios:
-        print(servicio.descripcion())
-        print("-------------------------")
-
-    print("\nProyecto ejecutado correctamente.")
+    print("\nGracias por utilizar Software FJ.")
 
 
 if __name__ == "__main__":

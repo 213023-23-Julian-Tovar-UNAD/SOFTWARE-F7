@@ -4,3 +4,10 @@
 2026-06-29 12:36:43,489 - INFO - Servicios creados correctamente.
 2026-06-29 12:36:43,490 - ERROR - La duración debe ser mayor que cero.
 2026-06-29 12:36:43,491 - ERROR - No se puede procesar una reserva cancelada.
+2026-06-29 12:44:49,404 - ERROR - Correo electrónico inválido.
+2026-06-29 12:50:46,154 - ERROR - Correo electrónico inválido.
+2026-06-29 12:50:57,458 - ERROR - Correo electrónico inválido.
+2026-06-29 12:53:55,932 - ERROR - Correo electrónico inválido.
+2026-06-29 12:54:05,947 - ERROR - Correo electrónico inválido.
+2026-06-29 12:54:22,917 - INFO - Cliente registrado correctamente.
+2026-06-29 12:54:39,816 - INFO - Servicio registrado correctamente.
